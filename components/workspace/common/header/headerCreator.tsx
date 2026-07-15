@@ -87,6 +87,15 @@ export default function HeaderItemCreator() {
                         Socials
                     </Link>
 
+
+                    <Link
+                        onNavigate={onDidNavigate}
+                        href="/app/accounts/creator/upload"
+                        className="text-gray-600 hover:text-[#e85c51]"
+                    >
+                        Upload
+                    </Link>
+
                     <Link
                         onNavigate={onDidNavigate}
                         href="/app/accounts/creator/support"
@@ -94,6 +103,8 @@ export default function HeaderItemCreator() {
                     >
                         Support
                     </Link>
+
+
 
                     <Link
                         onNavigate={onDidNavigate}

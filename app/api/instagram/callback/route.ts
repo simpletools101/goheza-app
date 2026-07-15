@@ -49,13 +49,13 @@ export async function GET(req: Request) {
         const igAccount = pages?.[0]?.instagram_business_account
         if (!igAccount) throw new Error('No Instagram Business account connected')
 
-     await supabase.from('social_accounts').upsert({
-    user_id: state,
-    platform: 'instagram',  // ✅ add this
-    instagram_business_id: igAccount.id,
-    access_token: longToken,
-    expires_at: new Date(Date.now() + expires_in * 1000).toISOString(),
-})
+        await supabase.from('social_accounts').upsert({
+            user_id: state,
+            platform: 'instagram', // ✅ add this
+            instagram_business_id: igAccount.id,
+            access_token: longToken,
+            expires_at: new Date(Date.now() + expires_in * 1000).toISOString(),
+        })
 
         return Response.redirect(`${baseURL}/app/auth/onboarding/socials`)
     } catch (error) {
